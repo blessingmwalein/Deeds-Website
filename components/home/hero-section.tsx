@@ -67,8 +67,8 @@ export function HeroSection() {
               <p className="text-lg leading-relaxed text-foreground/80">
                 Ensuring the secure registration, custody, and management of property records through a transparent and legally recognised system.
               </p>
-              <Link 
-                href="/about" 
+              <Link
+                href="/about"
                 className="group inline-flex items-center text-sm font-medium text-[#2D5DA3] underline-offset-4 hover:underline"
               >
                 Learn more about our mission
@@ -119,9 +119,9 @@ export function HeroSection() {
           </div>
 
           {/* Right - Spaced "Star Grid" Image Cards with 20px gaps */}
-          <div className="relative z-10 lg:col-span-6 lg:-mt-20">
+          {/* <div className="relative z-10 lg:col-span-6 lg:-mt-20">
             <div className="relative h-[600px] w-full">
-              {/* Card 1 - Middle Left */}
+            
               <div className="absolute left-[-2%] top-[45%] z-20 w-[49%] -translate-y-1/2 overflow-hidden rounded-3xl shadow-2xl transition-transform hover:scale-[1.02]">
                 <div className="relative aspect-[4/3.5]">
                   <Image
@@ -139,7 +139,7 @@ export function HeroSection() {
                 </div>
               </div>
 
-              {/* Card 2 - Top Right */}
+              
               <div className="absolute left-[51%] top-[5%] z-10 w-[47%] overflow-hidden rounded-3xl shadow-2xl transition-transform hover:scale-[1.02]">
                 <div className="relative aspect-[3/3.1]">
                   <Image
@@ -157,7 +157,7 @@ export function HeroSection() {
                 </div>
               </div>
 
-              {/* Card 3 - Bottom Right */}
+             
               <div className="absolute bottom-[5%] left-[51%] z-20 w-[51%] overflow-hidden rounded-3xl shadow-2xl transition-transform hover:scale-[1.02]">
                 <div className="relative aspect-[4/3]">
                   <Image
@@ -175,7 +175,7 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

@@ -46,7 +46,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
           <div className="flex items-center justify-center">
             <Image
               src="/images/logo.png"
-              alt="Zimbabwe Deeds Registry Logo"
+              alt="Deeds Registry Registry Logo"
               width={48}
               height={48}
               className="h-12 w-auto object-contain"
@@ -54,7 +54,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
             />
           </div>
           <span className="text-lg font-semibold tracking-wide text-foreground uppercase">
-            Zimbabwe Deeds
+            Deeds Registry
           </span>
         </Link>
 

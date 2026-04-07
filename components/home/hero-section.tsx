@@ -13,7 +13,7 @@ const slides = [
     title: "Deeds Reinsurance Program",
     subtitle: "Protecting Your Property Investment",
     description:
-      "Introducing our comprehensive Deeds Reinsurance Program — providing an additional layer of security for your property titles. Safeguard your real estate investments against unforeseen risks with government-backed protection.",
+      "Introducing our comprehensive Deeds Reinsurance Program — providing an additional layer of security for your property titles. To get started, review your conveyances and proceed with deeds reinsurance to safeguard your real estate investments against unforeseen risks with government-backed protection.",
     cta: "Learn About Reinsurance",
     ctaLink: "/services/reinsurance",
     learnMore: "Discover program benefits",
@@ -21,6 +21,7 @@ const slides = [
     icon: Shield,
     image: "/images/harare-skyline.jpg",
     location: "Harare",
+    color: "#1B3B2B", // Brand green for text
   },
   {
     id: 2,
@@ -30,12 +31,13 @@ const slides = [
     description:
       "A revolutionary new digital platform enabling global users to search, verify, and access Zimbabwe title deeds from anywhere in the world. Transparent, secure, and available 24/7 for property verification.",
     cta: "Join the Waitlist",
-    ctaLink: "/deeds-search",
+    ctaLink: "https://deeds-search.dev.dokuma.co.zw",
     learnMore: "Explore platform features",
     learnMoreLink: "/deeds-search#features",
     icon: Search,
     image: "/images/victoria-falls.jpg",
     location: "Victoria Falls",
+    color: "#1B3B2B", // Brand green for text
   },
   {
     id: 3,
@@ -51,6 +53,7 @@ const slides = [
     icon: Building2,
     image: "/images/bulawayo.jpg",
     location: "Bulawayo",
+    color: "#1B3B2B", // Brand green for text
   },
 ]
 
@@ -82,6 +85,10 @@ export function HeroSection() {
 
   const slide = slides[currentSlide]
   const IconComponent = slide.icon
+  // Use custom color for subtitle and title if provided
+  const subtitleStyle = slide.color ? { color: slide.color } : undefined
+  const titleStyle = slide.color ? { color: slide.color } : undefined
+  const accentColor = slide.color || "#1B3B2B"
 
   return (
     <section className="relative flex min-h-[calc(100vh-80px)] items-center overflow-hidden bg-[#F5F1EB] pb-12 pt-16 lg:pb-0 lg:pt-0">
@@ -130,7 +137,13 @@ export function HeroSection() {
                 isTransitioning ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
               }`}
             >
-              <span className="inline-flex items-center gap-2 rounded-full bg-[#2D5DA3]/10 px-4 py-2 text-sm font-medium text-[#2D5DA3]">
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
+                style={{
+                  backgroundColor: accentColor + "10", // 10% opacity
+                  color: accentColor,
+                }}
+              >
                 <IconComponent className="h-4 w-4" />
                 {slide.badge}
               </span>
@@ -142,10 +155,16 @@ export function HeroSection() {
                 isTransitioning ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
               }`}
             >
-              <p className="mb-2 text-sm font-medium uppercase tracking-wider text-[#2D5DA3]">
+              <p
+                className="mb-2 text-sm font-medium uppercase tracking-wider"
+                style={subtitleStyle}
+              >
                 {slide.subtitle}
               </p>
-              <h1 className="font-serif text-4xl font-normal leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
+              <h1
+                className="font-serif text-4xl font-normal leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance"
+                style={titleStyle}
+              >
                 {slide.title}
               </h1>
             </div>
@@ -159,7 +178,8 @@ export function HeroSection() {
               <p className="text-lg leading-relaxed text-foreground/80">{slide.description}</p>
               <Link
                 href={slide.learnMoreLink}
-                className="group inline-flex items-center text-sm font-medium text-[#2D5DA3] underline-offset-4 hover:underline"
+                className="group inline-flex items-center text-sm font-medium underline-offset-4 hover:underline"
+                style={{ color: accentColor }}
               >
                 {slide.learnMore}
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -188,7 +208,8 @@ export function HeroSection() {
               {/* Hand-drawn Curvy Arrow */}
               <div className="hidden translate-y-4 lg:block">
                 <svg
-                  className="h-20 w-20 text-[#2D5DA3]"
+                  className="h-20 w-20"
+                  style={{ color: accentColor }}
                   viewBox="0 0 100 100"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -226,14 +247,16 @@ export function HeroSection() {
               key={s.id}
               onClick={() => goToSlide(index)}
               className={`group relative h-2 overflow-hidden rounded-full transition-all duration-300 ${
-                index === currentSlide ? "w-10 bg-[#2D5DA3]" : "w-2 bg-[#2D5DA3]/30 hover:bg-[#2D5DA3]/50"
+                index === currentSlide ? "w-10" : "w-2"
               }`}
+              style={{ backgroundColor: index === currentSlide ? accentColor : `${accentColor}55` }}
               aria-label={`Go to slide ${index + 1}: ${s.title}`}
             >
               {index === currentSlide && (
                 <span
-                  className="absolute inset-y-0 left-0 bg-[#2D5DA3]/50"
+                  className="absolute inset-y-0 left-0"
                   style={{
+                    backgroundColor: `${accentColor}AA`,
                     animation: "progress 7s linear",
                     width: "100%",
                   }}
@@ -246,11 +269,6 @@ export function HeroSection() {
           <span className="font-medium text-foreground">{String(currentSlide + 1).padStart(2, "0")}</span>
           {" / "}
           {String(slides.length).padStart(2, "0")}
-        </span>
-        {/* Location Badge */}
-        <span className="hidden items-center gap-2 border-l border-foreground/10 pl-4 text-xs text-foreground/50 sm:inline-flex">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#2D5DA3]" />
-          {slide.location}
         </span>
       </div>
 

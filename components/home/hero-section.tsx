@@ -121,10 +121,11 @@ export function HeroSection() {
           src={slide.image}
           alt={`${slide.location} Zimbabwe`}
           fill
-          className="object-cover opacity-20"
+          sizes="100vw"
+          className="object-cover object-center opacity-55"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F5F1EB] via-[#F5F1EB]/90 to-[#F5F1EB]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F5F1EB]/35 via-[#F5F1EB]/50 to-[#F5F1EB]/65" />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">

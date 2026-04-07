@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { FloatingContactWidget } from '@/components/floating-contact-widget'
 import './globals.css'
 
 const inter = Inter({ 
@@ -44,6 +45,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         {children}
+        <FloatingContactWidget />
         <Analytics />
       </body>
     </html>

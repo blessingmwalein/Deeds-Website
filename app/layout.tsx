@@ -14,8 +14,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Zimbabwe Deeds Registry | Protecting Property Rights',
-  description: 'The Deeds Registry is responsible for the registration, custody and management of property ownership records in Zimbabwe.',
+  title: 'Zimbabwe Deeds Office | Protecting Property Rights',
+  description: 'The Deeds Office is responsible for the registration, custody and management of property ownership records in Zimbabwe.',
   generator: 'v0.app',
   icons: {
     icon: [

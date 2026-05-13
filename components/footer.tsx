@@ -28,7 +28,7 @@ export function Footer() {
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 transition-all group-hover:bg-white/10">
                 <NextImage
                   src="/images/logo.png"
-                  alt="Deeds Registry Logo"
+                  alt="Deeds Office Logo"
                   width={32}
                   height={32}
                   className="grayscale invert brightness-200"
@@ -36,11 +36,11 @@ export function Footer() {
               </div>
               <div>
                 <p className="font-serif text-lg font-normal leading-tight tracking-tight text-white">Zimbabwe</p>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50">Deeds Registry</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50">Deeds Office</p>
               </div>
             </Link>
             <p className="mt-6 text-sm leading-relaxed text-white/40 max-w-xs">
-              Ensuring secure property registration and safeguarding rights in Zimbabwe since 1891. A department under the Ministry of Justice.
+              The Deeds Office has ensured secure property registration and safeguarded rights in Zimbabwe since 1891. A department under the Ministry of Justice.
             </p>
             <div className="mt-8 flex gap-5">
               <a
@@ -125,7 +125,7 @@ export function Footer() {
           <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
             <div className="flex items-center gap-6">
               <p className="text-[11px] font-medium uppercase tracking-wider text-white/20">
-                © {new Date().getFullYear()} Zimbabwe Deeds Registry
+                © {new Date().getFullYear()} Zimbabwe Deeds Office
               </p>
               <div className="h-px w-12 bg-white/10 hidden sm:block" />
               <p className="text-[11px] font-medium uppercase tracking-wider text-white/20">

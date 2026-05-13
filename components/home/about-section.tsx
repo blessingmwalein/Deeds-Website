@@ -65,7 +65,7 @@ export function AboutSection() {
           <div className="max-w-lg lg:mt-12">
             <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
               <p>
-                The Zimbabwe Deeds Registry has been the cornerstone of property rights for over a century. Our mandate is to ensure every square inch of our nation is registered with absolute legal certainty.
+                The Zimbabwe Deeds Office has been the cornerstone of property rights for over a century. Our mandate is to ensure every square inch of our nation is registered with absolute legal certainty.
               </p>
               <p>
                 From historical archives to modern digital transformation, we safeguard the records that represent the wealth and heritage of our people.

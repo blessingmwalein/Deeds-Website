@@ -9,19 +9,19 @@ import { Button } from "@/components/ui/button"
 const slides = [
   {
     id: 1,
-    badge: "New Program",
-    title: "Deeds Reinsurance Program",
-    subtitle: "Protecting Your Property Investment",
+    badge: "Our Mandate",
+    title: "Deeds Office Zimbabwe",
+    subtitle: "Protecting Property Rights Since 1891",
     description:
-      "Introducing our comprehensive Deeds Reinsurance Program — providing an additional layer of security for your property titles. To get started, review your conveyances and proceed with deeds reinsurance to safeguard your real estate investments against unforeseen risks with government-backed protection.",
-    cta: "Learn About Reinsurance",
-    ctaLink: "/services/reinsurance",
-    learnMore: "Discover program benefits",
-    learnMoreLink: "/services/reinsurance#benefits",
-    icon: Shield,
-    image: "/images/harare-skyline.jpg",
-    location: "Harare",
-    color: "#1B3B2B", // Brand green for text
+      "Ensuring the secure registration, custody, and management of property records through a transparent and legally recognised system. Your trusted partner for all property documentation needs.",
+    cta: "Get Started",
+    ctaLink: "/about",
+    learnMore: "Learn more about our mission",
+    learnMoreLink: "/about",
+    icon: Building2,
+    image: "/images/bulawayo.jpg",
+    location: "Bulawayo",
+    color: "#1B3B2B",
   },
   {
     id: 2,
@@ -37,23 +37,23 @@ const slides = [
     icon: Search,
     image: "/images/victoria-falls.jpg",
     location: "Victoria Falls",
-    color: "#1B3B2B", // Brand green for text
+    color: "#1B3B2B",
   },
   {
     id: 3,
-    badge: "Our Services",
-    title: "Deeds Registry Zimbabwe",
-    subtitle: "Protecting Property Rights Since 1891",
+    badge: "New Programme",
+    title: "Validation and Securitisation",
+    subtitle: "Protecting Your Property Investment",
     description:
-      "Ensuring the secure registration, custody, and management of property records through a transparent and legally recognised system. Your trusted partner for all property documentation needs.",
-    cta: "Get Started",
-    ctaLink: "/services",
-    learnMore: "Learn more about our mission",
-    learnMoreLink: "/about",
-    icon: Building2,
-    image: "/images/bulawayo.jpg",
-    location: "Bulawayo",
-    color: "#1B3B2B", // Brand green for text
+      "Our Validation and Securitisation Programme verifies your paper title deeds and reissues them as securitised digital records. Working through your Conveyancers, we safeguard your real estate investments with government-backed protection.",
+    cta: "Learn About Securitisation",
+    ctaLink: "/modernisation#deed-securitisation",
+    learnMore: "Discover programme benefits",
+    learnMoreLink: "/modernisation#deed-securitisation",
+    icon: Shield,
+    image: "/images/harare-skyline.jpg",
+    location: "Harare",
+    color: "#1B3B2B",
   },
 ]
 

@@ -3,9 +3,8 @@ import { Footer } from "@/components/footer"
 import { HeroSection } from "@/components/home/hero-section"
 import { WhatWeDoSection } from "@/components/home/what-we-do-section"
 import { AboutSection } from "@/components/home/about-section"
-import { ServicesSection } from "@/components/home/services-section"
+import { VideoSection } from "@/components/home/video-section"
 import { ProgrammesSection } from "@/components/home/programmes-section"
-import { NewsSection } from "@/components/home/news-section"
 import { CTASection } from "@/components/home/cta-section"
 
 export default function HomePage() {
@@ -16,9 +15,8 @@ export default function HomePage() {
         <HeroSection />
         <WhatWeDoSection />
         <AboutSection />
-        <ServicesSection />
+        <VideoSection />
         <ProgrammesSection />
-        <NewsSection />
         <CTASection />
       </main>
       <Footer />

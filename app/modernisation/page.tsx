@@ -1,12 +1,13 @@
 "use client"
 
-import { useCallback } from "react"
+import { useCallback, useEffect } from "react"
 import Link from "next/link"
 import NextImage from "next/image"
 import useEmblaCarousel from "embla-carousel-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { YouTubePlayer } from "@/components/youtube-player"
 import {
   FileCheck,
   Home,
@@ -23,7 +24,13 @@ import {
   QrCode,
 } from "lucide-react"
 
+const SECURITISED_DEED_VIDEO_ID = "7x9bjWdRgDw"
+
 const kwanguSlides = [
+  {
+    image: "/kwangu-pics/Title Deed 3.jpg",
+    caption: "Title deed handover led by the Minister during the Epworth ceremony.",
+  },
   {
     image: "/kwangu-pics/Title Deed 1.jpg",
     caption: "Beneficiary receives a Deed of Grant during the Epworth handover.",
@@ -31,10 +38,6 @@ const kwanguSlides = [
   {
     image: "/kwangu-pics/Title Deed 2.jpg",
     caption: "Moments after collection at the Presidential handover ceremony.",
-  },
-  {
-    image: "/kwangu-pics/Title Deed 3.jpg",
-    caption: "A Kwangu/Ngakwami stand owner with their new securitised title deed.",
   },
   {
     image: "/kwangu-pics/Title Deed 4.jpg",
@@ -103,6 +106,12 @@ export default function ModernisationPage() {
   const kwanguNext = useCallback(() => kwanguApi?.scrollNext(), [kwanguApi])
   const landPrev = useCallback(() => landApi?.scrollPrev(), [landApi])
   const landNext = useCallback(() => landApi?.scrollNext(), [landApi])
+
+  useEffect(() => {
+    if (!kwanguApi) return
+    const interval = setInterval(() => kwanguApi.scrollNext(), 3000)
+    return () => clearInterval(interval)
+  }, [kwanguApi])
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
@@ -256,23 +265,12 @@ export default function ModernisationPage() {
 
             <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:items-start">
               <div className="lg:col-span-6">
-                <div className="relative overflow-hidden rounded-[2.5rem] border border-[#1B3B2B]/10 bg-[#F9FBF9] shadow-2xl">
-                  <div className="relative aspect-[3/4]">
-                    <NextImage
-                      src="/kwangu-pics/Title Deed 1.jpg"
-                      alt="Sample of a securitised title deed"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="absolute left-6 top-6 rounded-full bg-white/90 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-[#1B3B2B] shadow-md backdrop-blur">
-                    Sample Specimen
-                  </div>
-                  <div className="absolute bottom-6 right-6 flex items-center gap-2 rounded-full bg-[#001D11]/85 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur">
-                    <ShieldCheck className="h-3.5 w-3.5 text-[#E5B80B]" />
-                    Verified
-                  </div>
-                </div>
+                <YouTubePlayer
+                  videoId={SECURITISED_DEED_VIDEO_ID}
+                  title="Securitised Deed Walkthrough"
+                  badge="Watch Walkthrough"
+                  caption="Securitised Deed Features"
+                />
               </div>
 
               <div className="lg:col-span-6">

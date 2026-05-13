@@ -1,33 +1,16 @@
-"use client"
-
-import { useState } from "react"
-import Image from "next/image"
-import { Play, ShieldCheck, Fingerprint, ScanLine, Lock } from "lucide-react"
+import { ShieldCheck, Fingerprint, ScanLine, Lock } from "lucide-react"
+import { YouTubePlayer } from "@/components/youtube-player"
 
 const VIDEO_ID = "7x9bjWdRgDw"
 
 const securityHighlights = [
-  {
-    icon: ShieldCheck,
-    label: "Tamper-proof seal",
-  },
-  {
-    icon: Fingerprint,
-    label: "Unique digital fingerprint",
-  },
-  {
-    icon: ScanLine,
-    label: "Scannable verification",
-  },
-  {
-    icon: Lock,
-    label: "Encrypted ownership record",
-  },
+  { icon: ShieldCheck, label: "Tamper-proof seal" },
+  { icon: Fingerprint, label: "Unique digital fingerprint" },
+  { icon: ScanLine, label: "Scannable verification" },
+  { icon: Lock, label: "Encrypted ownership record" },
 ]
 
 export function VideoSection() {
-  const [playing, setPlaying] = useState(false)
-
   return (
     <section className="bg-[#F5F1EB] py-20 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -62,46 +45,12 @@ export function VideoSection() {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-[#1B3B2B]/10 bg-[#001D11] shadow-2xl">
-              <div className="relative aspect-video">
-                {playing ? (
-                  <iframe
-                    src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0`}
-                    title="Securitised Deed Walkthrough"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="absolute inset-0 h-full w-full"
-                  />
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => setPlaying(true)}
-                    className="group absolute inset-0 flex items-center justify-center"
-                    aria-label="Play securitised deed video"
-                  >
-                    <Image
-                      src={`https://i.ytimg.com/vi/${VIDEO_ID}/maxresdefault.jpg`}
-                      alt="Securitised deed walkthrough preview"
-                      fill
-                      unoptimized
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <span className="absolute inset-0 bg-gradient-to-t from-[#001D11]/70 via-[#001D11]/20 to-transparent" />
-                    <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[#E5B80B] shadow-2xl transition-transform duration-300 group-hover:scale-110">
-                      <Play className="h-8 w-8 translate-x-0.5 text-[#001D11]" fill="currentColor" />
-                    </span>
-                    <span className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#E5B80B]">
-                        Watch Now
-                      </span>
-                      <span className="text-xs font-medium text-white/70">
-                        Securitised Deed Features
-                      </span>
-                    </span>
-                  </button>
-                )}
-              </div>
-            </div>
+            <YouTubePlayer
+              videoId={VIDEO_ID}
+              title="Securitised Deed Walkthrough"
+              badge="Watch Now"
+              caption="Securitised Deed Features"
+            />
           </div>
         </div>
       </div>
